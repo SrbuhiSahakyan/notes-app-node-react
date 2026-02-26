@@ -11,6 +11,6 @@ app.use(express.json());
 app.use('/auth', authRoutes);
 app.use("/notes",noteRoutes);
 
-app.listen(process.env.PORT || 4000, () =>
+app.listen(process.env.PORT || 4000, '0.0.0.0', () =>
   console.log('Server running на порту ' + (process.env.PORT || 4000))
 );
