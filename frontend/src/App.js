@@ -13,7 +13,7 @@ function App() {
     const fetchUser = async () => {
       if (!token) return;
       try {
-       const API_URL = process.env.REACT_APP_BACKEND;
+        const API_URL = process.env.REACT_APP_BACKEND;
         const res = await fetch(`${API_URL}/auth/me`, {
           headers: { Authorization: `Bearer ${token}` },
         });

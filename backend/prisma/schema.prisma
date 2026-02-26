@@ -12,4 +12,16 @@ model User {
   email     String   @unique
   password  String
   createdAt DateTime @default(now())
+  notes Note[]
+}
+
+model Note {
+  id        Int      @id @default(autoincrement())
+  title     String
+  content   String
+  priority  Int      @default(0)
+  userId    Int
+  user      User     @relation(fields: [userId], references: [id])
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
 }
